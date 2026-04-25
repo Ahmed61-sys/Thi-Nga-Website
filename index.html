@@ -1,131 +1,169 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thi Nga – Meisterhafte Änderungsschneiderei in Bayreuth. Maßarbeit, Änderungen & Heimtextilien.">
-    <title>Thi Nga – Näh- und Änderungsarbeiten | Bayreuth</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thi Nga - Näh- und Änderungsarbeiten in Bayreuth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#000000",
+                    "primary-container": "#0f1c2e",
+                    "on-primary": "#ffffff",
+                    "secondary": "#645e4f",
+                    "secondary-container": "#e8dfcc",
+                    "on-secondary-container": "#696253",
+                    "background": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "surface": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "on-surface-variant": "#44474c",
+                    "outline-variant": "#c5c6cd",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-container-highest": "#e2e2e2",
+                },
+                spacing: {
+                    "section-gap": "120px",
+                },
+                fontFamily: {
+                    "headline-md": ["Newsreader"],
+                    "headline-lg": ["Newsreader"],
+                    "headline-xl": ["Newsreader"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label-sm": ["Manrope"]
+                },
+                fontSize: {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+</style>
 </head>
-<body>
+<body class="bg-background text-on-background font-body-md">
 
-    <header>
-        <div class="container header-container">
-            <div class="logo">Thi Nga</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Startseite</a></li>
-                    <li><a href="#leistungen">Leistungen</a></li>
-                    <li><a href="#kontakt">Kontakt & Vorab-Check</a></li>
+<header class="fixed top-0 w-full z-50 bg-[#fdfbf7] border-b border-[#e5e1da]">
+    <div class="max-w-[1140px] mx-auto px-8 py-6 flex justify-between items-center w-full">
+        <a href="index.html" class="text-2xl font-medium text-[#0f1c2e] italic font-serif font-['Newsreader'] tracking-tight">Thi Nga</a>
+        <nav class="hidden md:flex gap-8 font-serif font-['Newsreader'] tracking-tight">
+            <a class="text-[#0f1c2e] border-b border-[#0f1c2e] pb-1 cursor-pointer" href="index.html">Startseite</a>
+            <a class="text-[#6b665f] hover:text-[#0f1c2e] transition-colors duration-200" href="leistungen.html">Leistungen</a>
+            <a class="text-[#6b665f] hover:text-[#0f1c2e] transition-colors duration-200" href="kontakt.html">Kontakt</a>
+        </nav>
+        <div class="text-[#0f1c2e] font-serif font-['Newsreader'] tracking-tight font-medium">
+            0921 50724583
+        </div>
+    </div>
+</header>
+
+<main class="pt-[100px]">
+    <section class="max-w-[1140px] mx-auto px-8 mt-20 mb-[120px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="font-label-sm text-secondary uppercase tracking-widest block mb-4">Meisterhafte Schneiderkunst</span>
+                <h1 class="font-headline-xl text-primary mb-6">Präzision in jedem Stich.</h1>
+                <p class="font-body-lg text-on-surface-variant max-w-lg mb-8">
+                    In unserem Atelier in Bayreuth verbinden wir traditionelles Handwerk mit moderner Ästhetik. Wir geben Ihren Lieblingsstücken die perfekte Passform zurück.
+                </p>
+                <a class="inline-flex items-center gap-3 bg-primary-container text-on-primary px-8 py-4 font-label-sm tracking-wider hover:bg-opacity-90 transition-all" href="kontakt.html">
+                    <span class="material-symbols-outlined" data-icon="call">call</span>
+                    JETZT ANFRAGEN
+                </a>
+            </div>
+            <div class="relative h-[500px] overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" data-alt="Tailor working" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVxDGZziFpI5ryag0VDbX2ekCNehJaQFcB5JGbEV0W6UgNrsRVeVO8TPdbmdoN_HODAgh0qqBB5EDEpY2cAnSj3aRdB1FAk4R73IZRmFC4aUPCPWwDG8IrJT3xMGWuKqjf-GzwIw_wWHeVXxISLL-p3F9lzPVhPDnc9F9M6vZDL4ojrdI1Izl6Hr5IWm_wAnIkfKvpCYXF_8DuLeO3OWsbzi89L3khH0jq7reSf6BrTawwBALTx3CoqTRGA1yJqFOE2F8azWdT0U"/>
+                <div class="absolute inset-0 border-[24px] border-white opacity-20 pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface-container-low py-section-gap mb-section-gap">
+        <div class="max-w-[1140px] mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-white border border-outline-variant mx-auto flex items-center justify-center mb-6 rounded-full">
+                    <span class="material-symbols-outlined text-primary" data-icon="straighten">straighten</span>
+                </div>
+                <h4 class="font-headline-md mb-3">Millimeterarbeit</h4>
+                <p class="font-body-md text-on-surface-variant">Wir messen zweifach und schneiden einmal. Höchste Genauigkeit ist unser Standard.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-white border border-outline-variant mx-auto flex items-center justify-center mb-6 rounded-full">
+                    <span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+                </div>
+                <h4 class="font-headline-md mb-3">Nachhaltigkeit</h4>
+                <p class="font-body-md text-on-surface-variant">Reparieren statt Ersetzen. Wir verlängern die Lebensdauer Ihrer Garderobe nachhaltig.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-white border border-outline-variant mx-auto flex items-center justify-center mb-6 rounded-full">
+                    <span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+                </div>
+                <h4 class="font-headline-md mb-3">Veredelung</h4>
+                <p class="font-body-md text-on-surface-variant">Jedes Stück wird nach der Bearbeitung professionell aufbereitet und gebügelt.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-[1140px] mx-auto px-8 mb-section-gap">
+        <div class="bg-primary-container text-on-primary p-16 text-center relative overflow-hidden rounded-xl">
+            <div class="relative z-10">
+                <h2 class="font-headline-xl mb-6">Bereit für die perfekte Passform?</h2>
+                <p class="font-body-lg mb-10 opacity-90 max-w-xl mx-auto">
+                    Besuchen Sie uns in der Rathenaustraße oder rufen Sie uns für eine unverbindliche Beratung an.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a class="bg-white text-primary-container px-10 py-4 font-label-sm tracking-widest hover:bg-gray-100 transition-all rounded" href="tel:+4992150724583">
+                        0921 50724583
+                    </a>
+                    <a class="border border-white text-white px-10 py-4 font-label-sm tracking-widest hover:bg-white/10 transition-all rounded" href="kontakt.html">
+                        KONTAKT AUFNEHMEN
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-[#f5f2eb] border-t border-[#e5e1da] mt-[120px]">
+    <div class="max-w-[1140px] mx-auto px-8 py-20 flex flex-col md:flex-row justify-between gap-12">
+        <div class="space-y-6">
+            <div class="text-xl font-medium text-[#0f1c2e] font-serif font-['Newsreader']">Thi Nga Tailoring</div>
+            <p class="font-serif font-['Newsreader'] text-[#6b665f] max-w-xs">Ihr Meisterbetrieb für Änderungen und Maßarbeiten im Herzen von Bayreuth. Seit Jahren stehen wir für Qualität und Kundenzufriedenheit.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+            <div class="space-y-4">
+                <h4 class="font-serif font-['Newsreader'] font-medium text-[#0f1c2e]">Kontakt</h4>
+                <ul class="space-y-3 text-sm text-[#6b665f]">
+                    <li>Rathenaustraße 26, 95444 Bayreuth</li>
+                    <li>info@thinga-bayreuth.de</li>
+                    <li>0921 50724583</li>
                 </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home" class="hero animate-fade-in" style="background-image: linear-gradient(rgba(26, 35, 126, 0.85), rgba(26, 35, 126, 0.95)), url('image_0.png');">
-        <div class="container hero-content">
-            <h1>Meisterhafte Schneiderei<br>für Ihre Garderobe & Ihr Zuhause.</h1>
-            <p class="hero-tagline">Traditionelles Handwerk trifft auf moderne Perfektion.</p>
-            <div class="hero-buttons">
-                <a href="#kontakt" class="btn btn-primary">Jetzt Vorab-Check anfragen</a>
-                <a href="#leistungen" class="btn btn-secondary">Unsere Leistungen entdecken</a>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-serif font-['Newsreader'] font-medium text-[#0f1c2e]">Öffnungszeiten</h4>
+                <ul class="space-y-3 text-sm text-[#6b665f]">
+                    <li>Mo - Fr: 10:00 - 12:30 & 13:30 - 16:00</li>
+                    <li>Sa: 10:00 - 12:30</li>
+                    <li>So: Geschlossen</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <section id="leistungen" class="services">
-        <div class="container">
-            <h2 class="section-title">Unsere Kompetenzen</h2>
-            <div class="services-grid">
-                
-                <div class="service-card animate-slide-up">
-                    <div class="card-image" style="background-image: url('image_1.png');"></div>
-                    <div class="card-content">
-                        <h3>Bekleidung & Mode</h3>
-                        <p>Hosen kürzen, Kleider anpassen, Reißverschlüsse erneuern und Passform-Korrekturen für Damen- und Herrenmode.</p>
-                    </div>
-                </div>
-
-                <div class="service-card animate-slide-up">
-                    <div class="card-image" style="background-image: url('image_2.png');"></div>
-                    <div class="card-content">
-                        <h3>Wohnen & Heimtextilien</h3>
-                        <p>Fachgerechtes Kürzen und Umnähen von Gardinen, Vorhängen und Übergardinen. Anfertigung von Kissenbezügen und Tischwäsche.</p>
-                    </div>
-                </div>
-
-                <div class="service-card animate-slide-up">
-                    <div class="card-image" style="background-image: url('image_3.png');"></div>
-                    <div class="card-content">
-                        <h3>Reparatur & Pflege</h3>
-                        <p>Kunststopfen, Flicken von Rissen und die präzise Bearbeitung von schweren Stoffen oder Lederbekleidung.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="kontakt" class="contact">
-        <div class="container">
-            <h2 class="section-title">Kontakt & Vorab-Einschätzung</h2>
-            <p class="contact-lead">Nutzen Sie unseren bequemen Vorab-Check. Schicken Sie uns einfach ein Foto Ihres Anliegens für eine schnelle, unverbindliche Einschätzung!</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>So funktioniert Ihr digitaler Check:</h3>
-                    <ol>
-                        <li><strong>Foto machen:</strong> Fotografieren Sie den Defekt oder das Kleidungsstück.</li>
-                        <li><strong>Nachricht senden:</strong> Schicken Sie uns das Foto per WhatsApp oder E-Mail.</li>
-                        <li><strong>Einschätzung erhalten:</strong> Wir melden uns zeitnah mit Aufwand und Kosten.</li>
-                    </ol>
-                    <div class="contact-details">
-                        <p><strong>WhatsApp / Telefon:</strong> <a href="tel:+4992150724583">0921 50724583</a></p>
-                        <p><strong>E-Mail:</strong> <a href="mailto:info@thinga-schneiderei.de">info@thinga-schneiderei.de</a></p>
-                        <p><strong>Adresse:</strong> Rathenaustraße 26, 95444 Bayreuth</p>
-                    </div>
-                </div>
-                
-                <div class="opening-hours">
-                    <h3>Öffnungszeiten</h3>
-                    <table>
-                        <tr>
-                            <td>Montag – Freitag</td>
-                            <td>10:00 – 12:30 & 13:30 – 16:00 Uhr</td>
-                        </tr>
-                        <tr>
-                            <td>Samstag</td>
-                            <td>10:00 – 12:30 Uhr</td>
-                        </tr>
-                        <tr>
-                            <td>Sonntag</td>
-                            <td>Geschlossen</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-logo">Thi Nga</div>
-            <div class="footer-legal">
-                <h3>Impressum</h3>
-                <p>Thi Nga – Rathenaustraße 26, 95444 Bayreuth.<br>
-                Tel: 0921 50724583</p>
-            </div>
-            <div class="footer-legal">
-                <h3>Datenschutz</h3>
-                <p>Anfragen via WhatsApp/E-Mail verarbeiten wir nur zur Beantwortung Ihrer Anfrage gemäß DSGVO.</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 Thi Nga – Näh- und Änderungsarbeiten.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+    </div>
+    <div class="max-w-[1140px] mx-auto px-8 pb-10 flex justify-between items-center text-[#6b665f] text-xs font-serif font-['Newsreader']">
+        <div>© 2026 Thi Nga Tailoring Bayreuth. All rights reserved.</div>
+    </div>
+</footer>
+</body></html>
