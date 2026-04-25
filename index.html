@@ -1,169 +1,238 @@
 <!DOCTYPE html>
-<html class="light" lang="de"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thi Nga - Näh- und Änderungsarbeiten in Bayreuth</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    "primary": "#000000",
-                    "primary-container": "#0f1c2e",
-                    "on-primary": "#ffffff",
-                    "secondary": "#645e4f",
-                    "secondary-container": "#e8dfcc",
-                    "on-secondary-container": "#696253",
-                    "background": "#f9f9f9",
-                    "on-background": "#1a1c1c",
-                    "surface": "#f9f9f9",
-                    "on-surface": "#1a1c1c",
-                    "on-surface-variant": "#44474c",
-                    "outline-variant": "#c5c6cd",
-                    "surface-container-low": "#f3f3f3",
-                    "surface-container-highest": "#e2e2e2",
-                },
-                spacing: {
-                    "section-gap": "120px",
-                },
-                fontFamily: {
-                    "headline-md": ["Newsreader"],
-                    "headline-lg": ["Newsreader"],
-                    "headline-xl": ["Newsreader"],
-                    "body-md": ["Manrope"],
-                    "body-lg": ["Manrope"],
-                    "label-sm": ["Manrope"]
-                },
-                fontSize: {
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+<html class="light scroll-smooth" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Thi Nga - Näh- und Änderungsarbeiten in Bayreuth</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A1A1A", /* Ein weicheres, edles Schwarz */
+                        "primary-container": "#243147", /* Ein tiefes, elegantes Blau für Akzente */
+                        "on-primary": "#ffffff",
+                        "secondary": "#8A8170", /* Ein wärmeres Grau/Beige */
+                        "secondary-container": "#F5F2EB", /* Heller, warmer Hintergrund */
+                        "on-secondary-container": "#5C5648",
+                        "background": "#FAFAFA",
+                        "on-background": "#1A1A1A",
+                        "surface": "#FFFFFF",
+                        "on-surface": "#1A1A1A",
+                        "on-surface-variant": "#595959",
+                        "outline-variant": "#E0DCD3",
+                    },
+                    spacing: {
+                        "section-gap": "140px", /* Etwas mehr Luft (Whitespace) */
+                    },
+                    fontFamily: {
+                        "headline-md": ["Newsreader", "serif"],
+                        "headline-lg": ["Newsreader", "serif"],
+                        "headline-xl": ["Newsreader", "serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "label-sm": ["Manrope", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'floating': '0 20px 40px -10px rgba(0,0,0,0.12)',
+                    }
                 }
             }
         }
-    }
-</script>
-<style>
-    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-</style>
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* UI UX Pro Max: Sanfte Animationen */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Verzögerung für gestaffelte Elemente */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        /* Bild-Zoom-Effekt im Hero-Bereich */
+        .hero-image-wrapper { overflow: hidden; }
+        .hero-image-wrapper img {
+            transition: transform 1.5s ease;
+        }
+        .hero-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body class="bg-background text-on-background font-body-md">
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-white">
 
-<header class="fixed top-0 w-full z-50 bg-[#fdfbf7] border-b border-[#e5e1da]">
-    <div class="max-w-[1140px] mx-auto px-8 py-6 flex justify-between items-center w-full">
-        <a href="index.html" class="text-2xl font-medium text-[#0f1c2e] italic font-serif font-['Newsreader'] tracking-tight">Thi Nga</a>
-        <nav class="hidden md:flex gap-8 font-serif font-['Newsreader'] tracking-tight">
-            <a class="text-[#0f1c2e] border-b border-[#0f1c2e] pb-1 cursor-pointer" href="index.html">Startseite</a>
-            <a class="text-[#6b665f] hover:text-[#0f1c2e] transition-colors duration-200" href="leistungen.html">Leistungen</a>
-            <a class="text-[#6b665f] hover:text-[#0f1c2e] transition-colors duration-200" href="kontakt.html">Kontakt</a>
-        </nav>
-        <div class="text-[#0f1c2e] font-serif font-['Newsreader'] tracking-tight font-medium">
-            0921 50724583
+    <header class="fixed top-0 w-full z-50 bg-[#fdfbf7]/95 backdrop-blur-sm border-b border-[#e5e1da] shadow-sm transition-all duration-300">
+        <div class="max-w-[1140px] mx-auto px-8 py-5 flex justify-between items-center w-full">
+            <a href="index.html" class="text-3xl font-medium text-[#0f1c2e] italic font-serif tracking-tight transition-opacity hover:opacity-80">Thi Nga</a>
+            <nav class="hidden md:flex gap-10 font-serif tracking-tight text-[17px]">
+                <a class="text-[#0f1c2e] font-medium relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-px after:bg-[#0f1c2e]" href="index.html">Startseite</a>
+                <a class="text-[#6b665f] hover:text-[#0f1c2e] transition-colors duration-300" href="leistungen.html">Leistungen</a>
+                <a class="text-[#6b665f] hover:text-[#0f1c2e] transition-colors duration-300" href="kontakt.html">Kontakt</a>
+            </nav>
+            <div class="hidden md:flex items-center gap-3">
+                <span class="material-symbols-outlined text-[#0f1c2e] text-xl">call</span>
+                <a href="tel:092150724583" class="text-[#0f1c2e] font-serif tracking-tight font-medium hover:opacity-80 transition-opacity">0921 50724583</a>
+            </div>
+            
+            <button class="md:hidden text-primary">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
         </div>
-    </div>
-</header>
+    </header>
 
-<main class="pt-[100px]">
-    <section class="max-w-[1140px] mx-auto px-8 mt-20 mb-[120px]">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="font-label-sm text-secondary uppercase tracking-widest block mb-4">Meisterhafte Schneiderkunst</span>
-                <h1 class="font-headline-xl text-primary mb-6">Präzision in jedem Stich.</h1>
-                <p class="font-body-lg text-on-surface-variant max-w-lg mb-8">
-                    In unserem Atelier in Bayreuth verbinden wir traditionelles Handwerk mit moderner Ästhetik. Wir geben Ihren Lieblingsstücken die perfekte Passform zurück.
-                </p>
-                <a class="inline-flex items-center gap-3 bg-primary-container text-on-primary px-8 py-4 font-label-sm tracking-wider hover:bg-opacity-90 transition-all" href="kontakt.html">
-                    <span class="material-symbols-outlined" data-icon="call">call</span>
-                    JETZT ANFRAGEN
-                </a>
-            </div>
-            <div class="relative h-[500px] overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover" data-alt="Tailor working" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVxDGZziFpI5ryag0VDbX2ekCNehJaQFcB5JGbEV0W6UgNrsRVeVO8TPdbmdoN_HODAgh0qqBB5EDEpY2cAnSj3aRdB1FAk4R73IZRmFC4aUPCPWwDG8IrJT3xMGWuKqjf-GzwIw_wWHeVXxISLL-p3F9lzPVhPDnc9F9M6vZDL4ojrdI1Izl6Hr5IWm_wAnIkfKvpCYXF_8DuLeO3OWsbzi89L3khH0jq7reSf6BrTawwBALTx3CoqTRGA1yJqFOE2F8azWdT0U"/>
-                <div class="absolute inset-0 border-[24px] border-white opacity-20 pointer-events-none"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-surface-container-low py-section-gap mb-section-gap">
-        <div class="max-w-[1140px] mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="text-center">
-                <div class="w-16 h-16 bg-white border border-outline-variant mx-auto flex items-center justify-center mb-6 rounded-full">
-                    <span class="material-symbols-outlined text-primary" data-icon="straighten">straighten</span>
+    <main class="pt-[140px]">
+        <section class="max-w-[1140px] mx-auto px-8 mt-10 mb-[140px]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <span class="font-label-sm text-secondary uppercase tracking-[0.2em] block mb-6 font-semibold">Meisterhafte Schneiderkunst</span>
+                    <h1 class="font-headline-xl text-primary mb-8 text-[56px] leading-[1.1] tracking-tight">Präzision in <br>jedem Stich.</h1>
+                    <p class="font-body-lg text-on-surface-variant max-w-[480px] mb-10 leading-relaxed text-[19px]">
+                        In unserem Atelier in Bayreuth verbinden wir traditionelles Handwerk mit moderner Ästhetik. Wir geben Ihren Lieblingsstücken die perfekte Passform zurück.
+                    </p>
+                    <div class="flex flex-wrap gap-5">
+                        <a class="inline-flex items-center justify-center gap-3 bg-primary-container text-white px-9 py-4 font-label-sm tracking-widest hover:bg-[#1a2436] transition-all duration-300 rounded-sm shadow-md hover:shadow-floating hover:-translate-y-1" href="kontakt.html">
+                            JETZT ANFRAGEN
+                        </a>
+                        <a class="inline-flex items-center justify-center gap-3 bg-transparent border border-outline-variant text-primary px-9 py-4 font-label-sm tracking-widest hover:border-primary transition-all duration-300 rounded-sm" href="leistungen.html">
+                            UNSERE LEISTUNGEN
+                        </a>
+                    </div>
                 </div>
-                <h4 class="font-headline-md mb-3">Millimeterarbeit</h4>
-                <p class="font-body-md text-on-surface-variant">Wir messen zweifach und schneiden einmal. Höchste Genauigkeit ist unser Standard.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-16 h-16 bg-white border border-outline-variant mx-auto flex items-center justify-center mb-6 rounded-full">
-                    <span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
-                </div>
-                <h4 class="font-headline-md mb-3">Nachhaltigkeit</h4>
-                <p class="font-body-md text-on-surface-variant">Reparieren statt Ersetzen. Wir verlängern die Lebensdauer Ihrer Garderobe nachhaltig.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-16 h-16 bg-white border border-outline-variant mx-auto flex items-center justify-center mb-6 rounded-full">
-                    <span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
-                </div>
-                <h4 class="font-headline-md mb-3">Veredelung</h4>
-                <p class="font-body-md text-on-surface-variant">Jedes Stück wird nach der Bearbeitung professionell aufbereitet und gebügelt.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-[1140px] mx-auto px-8 mb-section-gap">
-        <div class="bg-primary-container text-on-primary p-16 text-center relative overflow-hidden rounded-xl">
-            <div class="relative z-10">
-                <h2 class="font-headline-xl mb-6">Bereit für die perfekte Passform?</h2>
-                <p class="font-body-lg mb-10 opacity-90 max-w-xl mx-auto">
-                    Besuchen Sie uns in der Rathenaustraße oder rufen Sie uns für eine unverbindliche Beratung an.
-                </p>
-                <div class="flex flex-col md:flex-row justify-center gap-6">
-                    <a class="bg-white text-primary-container px-10 py-4 font-label-sm tracking-widest hover:bg-gray-100 transition-all rounded" href="tel:+4992150724583">
-                        0921 50724583
-                    </a>
-                    <a class="border border-white text-white px-10 py-4 font-label-sm tracking-widest hover:bg-white/10 transition-all rounded" href="kontakt.html">
-                        KONTAKT AUFNEHMEN
-                    </a>
+                <div class="relative h-[600px] rounded-xl hero-image-wrapper shadow-soft fade-in-up delay-200">
+                    <img class="w-full h-full object-cover rounded-xl" data-alt="Detailaufnahme einer Nähmaschine und hochwertigen Stoffen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVxDGZziFpI5ryag0VDbX2ekCNehJaQFcB5JGbEV0W6UgNrsRVeVO8TPdbmdoN_HODAgh0qqBB5EDEpY2cAnSj3aRdB1FAk4R73IZRmFC4aUPCPWwDG8IrJT3xMGWuKqjf-GzwIw_wWHeVXxISLL-p3F9lzPVhPDnc9F9M6vZDL4ojrdI1Izl6Hr5IWm_wAnIkfKvpCYXF_8DuLeO3OWsbzi89L3khH0jq7reSf6BrTawwBALTx3CoqTRGA1yJqFOE2F8azWdT0U"/>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-container rounded-full mix-blend-multiply opacity-70 -z-10"></div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
 
-<footer class="bg-[#f5f2eb] border-t border-[#e5e1da] mt-[120px]">
-    <div class="max-w-[1140px] mx-auto px-8 py-20 flex flex-col md:flex-row justify-between gap-12">
-        <div class="space-y-6">
-            <div class="text-xl font-medium text-[#0f1c2e] font-serif font-['Newsreader']">Thi Nga Tailoring</div>
-            <p class="font-serif font-['Newsreader'] text-[#6b665f] max-w-xs">Ihr Meisterbetrieb für Änderungen und Maßarbeiten im Herzen von Bayreuth. Seit Jahren stehen wir für Qualität und Kundenzufriedenheit.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
-            <div class="space-y-4">
-                <h4 class="font-serif font-['Newsreader'] font-medium text-[#0f1c2e]">Kontakt</h4>
-                <ul class="space-y-3 text-sm text-[#6b665f]">
-                    <li>Rathenaustraße 26, 95444 Bayreuth</li>
-                    <li>info@thinga-bayreuth.de</li>
-                    <li>0921 50724583</li>
-                </ul>
+        <section class="bg-surface py-section-gap mb-section-gap border-y border-outline-variant/30">
+            <div class="max-w-[1140px] mx-auto px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <span class="font-label-sm text-secondary uppercase tracking-widest block mb-4">Unsere Werte</span>
+                    <h2 class="font-headline-lg text-primary">Handwerk aus Überzeugung</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-10 rounded-xl border border-outline-variant/50 shadow-sm hover:shadow-soft transition-shadow duration-300 flex flex-col items-start fade-in-up delay-100">
+                        <div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="straighten">straighten</span>
+                        </div>
+                        <h4 class="font-headline-md mb-4 text-primary">Millimeterarbeit</h4>
+                        <p class="font-body-md text-on-surface-variant leading-relaxed">Wir messen zweifach und schneiden einmal. Höchste Genauigkeit ist bei uns nicht die Ausnahme, sondern der absolute Standard.</p>
+                    </div>
+                    
+                    <div class="bg-white p-10 rounded-xl border border-outline-variant/50 shadow-sm hover:shadow-soft transition-shadow duration-300 flex flex-col items-start fade-in-up delay-200">
+                        <div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="eco">eco</span>
+                        </div>
+                        <h4 class="font-headline-md mb-4 text-primary">Nachhaltigkeit</h4>
+                        <p class="font-body-md text-on-surface-variant leading-relaxed">Reparieren statt Ersetzen. Wir hauchen Ihren Textilien neues Leben ein und verlängern die Lebensdauer Ihrer Garderobe nachhaltig.</p>
+                    </div>
+                    
+                    <div class="bg-white p-10 rounded-xl border border-outline-variant/50 shadow-sm hover:shadow-soft transition-shadow duration-300 flex flex-col items-start fade-in-up delay-300">
+                        <div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="auto_awesome">auto_awesome</span>
+                        </div>
+                        <h4 class="font-headline-md mb-4 text-primary">Veredelung</h4>
+                        <p class="font-body-md text-on-surface-variant leading-relaxed">Der letzte Schliff zählt. Jedes Stück wird nach der Bearbeitung von uns sorgfältig geprüft, professionell aufbereitet und gebügelt.</p>
+                    </div>
+                </div>
             </div>
-            <div class="space-y-4">
-                <h4 class="font-serif font-['Newsreader'] font-medium text-[#0f1c2e]">Öffnungszeiten</h4>
-                <ul class="space-y-3 text-sm text-[#6b665f]">
-                    <li>Mo - Fr: 10:00 - 12:30 & 13:30 - 16:00</li>
-                    <li>Sa: 10:00 - 12:30</li>
-                    <li>So: Geschlossen</li>
-                </ul>
+        </section>
+
+        <section class="max-w-[1140px] mx-auto px-8 mb-section-gap fade-in-up">
+            <div class="bg-primary-container text-white p-16 md:p-24 text-center relative overflow-hidden rounded-2xl shadow-floating">
+                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
+                
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h2 class="font-headline-xl mb-6 text-white text-[42px] leading-tight">Bereit für die perfekte Passform?</h2>
+                    <p class="font-body-lg mb-12 text-white/80 leading-relaxed">
+                        Besuchen Sie uns direkt in der Rathenaustraße in Bayreuth oder rufen Sie uns für eine unverbindliche Beratung an. Wir nehmen uns Zeit für Sie.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-5">
+                        <a class="inline-flex items-center justify-center bg-white text-primary-container px-10 py-4 font-label-sm tracking-widest hover:bg-gray-100 hover:scale-105 transition-all duration-300 rounded-sm font-bold" href="tel:+4992150724583">
+                            <span class="material-symbols-outlined mr-2 text-[18px]">phone</span> 0921 50724583
+                        </a>
+                        <a class="inline-flex items-center justify-center border border-white/40 text-white px-10 py-4 font-label-sm tracking-widest hover:bg-white/10 transition-all duration-300 rounded-sm" href="kontakt.html">
+                            ZUM KONTAKTFORMULAR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#F9F8F6] border-t border-outline-variant/40 pt-20">
+        <div class="max-w-[1140px] mx-auto px-8 flex flex-col lg:flex-row justify-between gap-16 pb-16 border-b border-outline-variant/30">
+            <div class="lg:w-1/3 space-y-6">
+                <a href="index.html" class="text-3xl font-medium text-[#0f1c2e] font-serif italic tracking-tight block">Thi Nga</a>
+                <p class="font-body-md text-on-surface-variant leading-relaxed max-w-sm">Ihr Meisterbetrieb für Änderungen und Maßarbeiten im Herzen von Bayreuth. Seit Jahren stehen wir für handwerkliche Qualität und absolute Kundenzufriedenheit.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 lg:w-2/3 lg:pl-12">
+                <div class="space-y-6">
+                    <h4 class="font-serif text-xl font-medium text-primary tracking-tight">Atelier & Kontakt</h4>
+                    <ul class="space-y-4 text-[15px] text-on-surface-variant font-body-md">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-[20px] mt-0.5 opacity-70">location_on</span>
+                            <span>Rathenaustraße 26<br>95444 Bayreuth</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[20px] opacity-70">mail</span>
+                            <a href="mailto:info@thinga-bayreuth.de" class="hover:text-primary transition-colors">info@thinga-bayreuth.de</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[20px] opacity-70">call</span>
+                            <a href="tel:092150724583" class="hover:text-primary transition-colors">0921 50724583</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-6">
+                    <h4 class="font-serif text-xl font-medium text-primary tracking-tight">Öffnungszeiten</h4>
+                    <ul class="space-y-4 text-[15px] text-on-surface-variant font-body-md">
+                        <li class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span class="font-medium text-primary/80">Montag - Freitag</span>
+                            <span class="text-right">10:00 - 12:30<br>13:30 - 16:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span class="font-medium text-primary/80">Samstag</span>
+                            <span>10:00 - 12:30</span>
+                        </li>
+                        <li class="flex justify-between pb-2">
+                            <span class="font-medium text-primary/80">Sonntag</span>
+                            <span>Geschlossen</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="max-w-[1140px] mx-auto px-8 pb-10 flex justify-between items-center text-[#6b665f] text-xs font-serif font-['Newsreader']">
-        <div>© 2026 Thi Nga Tailoring Bayreuth. All rights reserved.</div>
-    </div>
-</footer>
-</body></html>
+        
+        <div class="max-w-[1140px] mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant/70 text-[13px] font-body-md">
+            <div>© 2026 Thi Nga Tailoring Bayreuth. Alle Rechte vorbehalten.</div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-primary transition-colors">Impressum</a>
+                <a href="#" class="hover:text-primary transition-colors">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
